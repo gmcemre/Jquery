@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="Jquery_3.6.0.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>JQuery</title>
+    <style>
+        #liste{
+            width: 200px;
+            height: 400px;
+            background-color: lightgray;
+        }
+        .genel{
+            width: 200px;
+            height: 400px;
+            background-color: rgb(175,12,100);
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#btnEkle").click(function(){
+            var metin = $("#txtAd").val() + "<br/>";
+            $("#liste").append(metin);
+            });
+
+            $("#btnAcKapa").click(function(){
+                $(".genel").toggle("slow");
+            });
+
+            $("#btnRenkDegistir").click(function (){
+                var red = Math.floor(Math.random()*255);
+                var green =Math.floor(Math.random()*255);
+                var blue =Math.floor(Math.random()*255);
+                $(this).css("background-color","rgb("+red+","+green+","+blue+")");
+            });
+        });
+    </script>
+</head>
+<body>
+    Adı : <input type="text" id="txtAd">
+
+    <input type="button" name="name" value="Ekle" id="btnEkle">
+
+    <div id="liste"></div>
+
+    <input type="button" value="Renk Değiştir" id="btnRenkDegistir">
+    <br>
+    <br>
+    <div class="genel"></div> 
+
+    <input type="button" value="Div Aç Kapat" id="btnAcKapa">
+
+</body>
+</html>
